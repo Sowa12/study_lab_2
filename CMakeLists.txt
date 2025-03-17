@@ -3,36 +3,36 @@ cmake_minimum_required(VERSION 3.10.0)
 set(PATCH_VERSION "1" CACHE INTERNAL "Patch version")
 set(PROJECT_VERSION 0.0.${PATCH_VERSION})
 
-project(helloworld VERSION ${PROJECT_VERSION} LANGUAGES CXX)
+project(ip_filter VERSION ${PROJECT_VERSION} LANGUAGES CXX)
 
 option(WITH_BOOST_TEST "Whether to build Boost test" ON)
 option(WITH_GTEST_TEST "Whether to build GTEST test" ON)
 
 configure_file(version.h.in version.h)
 
-add_executable(helloworld src/main.cpp)
+add_executable(ip_filter src/main.cpp)
 
-target_include_directories(helloworld PUBLIC
+target_include_directories(ip_filter PUBLIC
     inc/
 )
 
-add_library(helloworldLib src/lib.cpp)
+add_library(filterLib src/lib.cpp)
 
-target_include_directories(helloworldLib PUBLIC
+target_include_directories(filterLib PUBLIC
     inc/
 )
 
-set_target_properties(helloworld helloworldLib PROPERTIES
+set_target_properties(ip_filter filterLib PROPERTIES
     CXX_STANDARD 14
     CXX_STANDARD_REQUIRED ON
 )
 
-target_include_directories(helloworldLib
+target_include_directories(filterLib
     PRIVATE ${CMAKE_BINARY_DIR}
 )
 
-target_link_libraries(helloworld PRIVATE
-    helloworldLib
+target_link_libraries(ip_filter PRIVATE
+    filterLib
 )
 
 if(WITH_BOOST_TEST)
@@ -51,7 +51,7 @@ if(WITH_BOOST_TEST)
 
     target_link_libraries(test_version_b
         ${Boost_LIBRARIES}
-        helloworldLib
+        filterLib
     )
 endif()
 
@@ -71,15 +71,15 @@ if(WITH_GTEST_TEST)
 
     target_link_libraries(test_version_gtest
         GTest::GTest
-        helloworldLib
+        filterLib
     )
 endif()
 
 if (MSVC)
-    target_compile_options(helloworld PRIVATE
+    target_compile_options(ip_filter PRIVATE
         /W4
     )
-    target_compile_options(helloworldLib PRIVATE
+    target_compile_options(filterLib PRIVATE
         /W4
     )
     if(WITH_BOOST_TEST)
@@ -88,10 +88,10 @@ if (MSVC)
         )
     endif()
 else ()
-    target_compile_options(helloworld PRIVATE
+    target_compile_options(ip_filter PRIVATE
         -Wall -Wextra -pedantic -Werror
     )
-    target_compile_options(helloworldLib PRIVATE
+    target_compile_options(filterLib PRIVATE
         -Wall -Wextra -pedantic -Werror
     )
     if(WITH_BOOST_TEST)
@@ -108,7 +108,7 @@ else ()
 
 endif()
 
-install(TARGETS helloworld RUNTIME DESTINATION bin)
+install(TARGETS ip_filter RUNTIME DESTINATION bin)
 
 set(CPACK_GENERATOR DEB)
 set(CPACK_PACKAGE_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}")

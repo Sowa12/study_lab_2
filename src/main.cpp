@@ -1,6 +1,14 @@
 #include <iostream>
 #include <lib.h>
 
+void out(const ipVector &v)
+{
+    for (const auto &i : v)
+    {
+        std::cout << i << std::endl;
+    }
+}
+
 int main()
 {
     try
@@ -9,38 +17,23 @@ int main()
 
         for (std::string line; std::getline(std::cin, line);)
         {
-            try {
-            strVector v = split(line, '\t');
+            try
+            {
+                strVector v = split(line, '\t');
 
-            IPAddress ip(split(v.at(0), '.'));
+                IPAddress ip(split(v.at(0), '.'));
 
-            ips.insert(ip);
-            } catch(...) {
-
+                ips.insert(ip);
+            }
+            catch (...)
+            {
             }
         }
-        
-        for (const auto& i : ips) {
-            std::cout << i << std::endl;
-        }
 
-        const auto ip_with_part_1 = filter(ips, 1);
-
-        for (const auto& i : ip_with_part_1) {
-            std::cout << i << std::endl;
-        }
-
-        const auto ip_with_part_46_70 = filter(ips, 46, 70);
-
-        for (const auto& i : ip_with_part_46_70) {
-            std::cout << i << std::endl;
-        }
-
-        const auto ip_with_any_part_46 = filter_any(ips, 46);
-
-        for (const auto& i : ip_with_any_part_46) {
-            std::cout << i << std::endl;
-        }
+        out(ips);
+        out(filter(ips, 1));
+        out(filter(ips, 46, 70));
+        out(filter_any(ips, 46));
 
         return EXIT_SUCCESS;
     }

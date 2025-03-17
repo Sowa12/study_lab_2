@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/helloworld.dir/src/main.cpp.o -o helloworld  libhelloworldLib.a 

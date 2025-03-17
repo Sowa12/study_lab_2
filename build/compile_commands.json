@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/sowa/lab/build",
+  "command": "/usr/bin/c++  -I/home/sowa/lab/inc -I/home/sowa/lab/build -g -Wall -Wextra -pedantic -Werror -std=gnu++14 -o CMakeFiles/helloworldLib.dir/src/lib.cpp.o -c /home/sowa/lab/src/lib.cpp",
+  "file": "/home/sowa/lab/src/lib.cpp"
+},
+{
+  "directory": "/home/sowa/lab/build",
+  "command": "/usr/bin/c++  -I/home/sowa/lab/inc -g -Wall -Wextra -pedantic -Werror -std=gnu++14 -o CMakeFiles/helloworld.dir/src/main.cpp.o -c /home/sowa/lab/src/main.cpp",
+  "file": "/home/sowa/lab/src/main.cpp"
+},
+{
+  "directory": "/home/sowa/lab/build",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DBOOST_TEST_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK -I/home/sowa/lab/inc -g -Wall -Wextra -pedantic -Werror -std=gnu++14 -o CMakeFiles/test_version_b.dir/tests/test_version_boost.cpp.o -c /home/sowa/lab/tests/test_version_boost.cpp",
+  "file": "/home/sowa/lab/tests/test_version_boost.cpp"
+},
+{
+  "directory": "/home/sowa/lab/build",
+  "command": "/usr/bin/c++ -DBOOST_TEST_DYN_LINK -I/home/sowa/lab/inc -g -Wall -Wextra -pedantic -Werror -DGTEST_HAS_PTHREAD=1 -std=gnu++14 -o CMakeFiles/test_version_gtest.dir/tests/test_version_gtest.cpp.o -c /home/sowa/lab/tests/test_version_gtest.cpp",
+  "file": "/home/sowa/lab/tests/test_version_gtest.cpp"
+}
+]

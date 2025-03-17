@@ -1,0 +1,13 @@
+/home/sowa/lab/build/CMakeFiles/helloworld.dir
+/home/sowa/lab/build/CMakeFiles/helloworldLib.dir
+/home/sowa/lab/build/CMakeFiles/test_version_b.dir
+/home/sowa/lab/build/CMakeFiles/test_version_gtest.dir
+/home/sowa/lab/build/CMakeFiles/package.dir
+/home/sowa/lab/build/CMakeFiles/package_source.dir
+/home/sowa/lab/build/CMakeFiles/test.dir
+/home/sowa/lab/build/CMakeFiles/edit_cache.dir
+/home/sowa/lab/build/CMakeFiles/rebuild_cache.dir
+/home/sowa/lab/build/CMakeFiles/list_install_components.dir
+/home/sowa/lab/build/CMakeFiles/install.dir
+/home/sowa/lab/build/CMakeFiles/install/local.dir
+/home/sowa/lab/build/CMakeFiles/install/strip.dir
